@@ -26,6 +26,10 @@
   + The owner of an account may assign a new owner if the account's data is zeroed out
   + Program accounts do not store state $\to$ use have to use another data account to store state.
     + Example: if you have a counter program that lets you increment a counter , you must create two accounts. one account to store the program's code, and one to store the counter.
+  <div style = "text-align:center">
+  <img src="/Media/example">
+  <figcaption> Information is stored by account</figcaption> 
+  </div>
   > **Terminology**
     + Program Derived Address(PDA): an account whose owner is a program and thus is not controlled by a private key like other accounts.
 # Programs
