@@ -80,7 +80,8 @@
   + https://docs.solana.com/developing/programming-model/overview
   + https://spl.solana.com/
   + [Solana Cookbook](https://solanacookbook.com/references/programs.html#how-to-do-cross-program-invocation)
-
+# Must follow
+  + https://forums.solana.com/top?order=views&period=monthly
 
 
 # New words
