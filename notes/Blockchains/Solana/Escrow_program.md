@@ -1,7 +1,7 @@
 
 # Interactive with Program
 + In Solana network, only account that owned by program can call program function. 
-+ Normal account (wallet) that owned by system program $\to$ so that it only call system program $\to$ If we want to call another program(Smart contract) we should create an account that owned by this program $\to$ call Program Derived Account. 
++ Normal account (wallet) that owned by system program $\to$ so that it only call system program $\to$ If we want to call another program(Smart contract) we should create an account that owned by this program $\to$ call (Program Derived Account)[https://pencilflip.medium.com/learning-solana-3-what-is-a-program-derived-address-732b06def7c1]. 
   <div style = "text-align:center">
   <img src="/Media/solana_program.drawio.png">
   <figcaption> Account interact with program</figcaption> 
