@@ -5,8 +5,8 @@
   + Accounts have a max size of 10mb
   + Program Derived Address(PDA) accounts have a max size of 10kb
   + PDA accounts can be used to sign on behalf of a program
-  + Account size is static
-  + Account data storage is paid with rent
+  + **Account size is static(fixed)**
+  + **Account data storage is paid with rent**
   + Default account owner is the System Program
 + There are 3 kinds of accounts:
   + Data accounts: store data: 2 types
@@ -21,8 +21,8 @@
   </div>
 + **Rent** : Validators on the Solana network need to maintain a working copy of this state in memory, the network charges a time-and-space based fee for this resource consumption, also known as rent. 
   > **Note**
-  + Only a data account's owner can modify data and debit lamports.
-  + Anyone is allowed to creadit lamports to a data account
+  + **Data account's owner can modify data and debit lamports.**
+  + Anyone is allowed to credit lamports to a data account
   + The owner of an account may assign a new owner if the account's data is zeroed out
   + Program accounts do not store state $\to$ use have to use another data account to store state.
     + Example: if you have a counter program that lets you increment a counter , you must create two accounts. one account to store the program's code, and one to store the counter.
