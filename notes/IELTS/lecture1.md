@@ -30,6 +30,7 @@ $\to$ The two maps illustrate the changes which have taken place in a specific a
 3. There was/were + (a/an) adj + noun
 
 > Ex: there were a dramatic urbanization in the area.
+
 **II. Kéo dài overview**
 + Biến đổi từ cai gì $\dots$ thành $\dots$ (from $\dots$ to)
 + Khu vực đã biến đổi hoàn toàn.
