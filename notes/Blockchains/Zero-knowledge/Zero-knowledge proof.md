@@ -26,3 +26,20 @@ The general structure of a zero-knowledge proof consists of three sequential act
 <img src="/Media/blockchain-Zero-Knowledge-Proof-Witness.png">
 <figcaption> A picks a random question and sends the proof to B</figcaption> 
 </div>
+
++ **Challenge**. After that, B chooses a question from the set and asks A to answer it.
+<div style = "text-align:center">
+<img src="/Media/blockchain-Zero-Knowledge-Proof-Challenge.png">
+<figcaption> B picks a random question and asks A to answer</figcaption> 
+</div>
+
++ **Response**. A calculates the answer and sends it back to B.
+  
+<div style = "text-align:center">
+<img src="/Media/blockchain-Zero-Knowledge-Proof-Witness.png">
+<figcaption> A calculates the answer and sends it to B</figcaption> 
+</div>
+
+
+
+
