@@ -10,7 +10,11 @@
   6. Metrics indicating GPU utilization, server throughput, and server latency. The metrics are provided in the Prometheus data format.
   7. Model version support
 
+## Notes for deploy triton and fastAPI
 
+1. Convert model to tensorrt 
+> Tip: Use docker for convert.
+2. 
 
 
 # Reference

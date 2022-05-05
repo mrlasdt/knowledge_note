@@ -18,7 +18,7 @@ B &\equiv (\dots , (T_0,T_1,\dots), \dots)\\
 \Pi(\sigma, B) &\equiv \Omega(B, \Upsilon (\Upsilon(\sigma, T_0), T_1))\dots)
 \end{aligned}$$
 Where: 
-  + $\Omega$ is the block-finalisation state transition function (a function that rewards a nominated party);
+  + $\Omega$ is the block-finalization state transition function (a function that rewards a nominated party);
   + B is this block, which includes a series of transactions amongst some other components; 
   + $\Pi$ is the block-level state-transition function.
 
