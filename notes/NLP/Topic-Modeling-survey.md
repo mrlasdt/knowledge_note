@@ -32,5 +32,9 @@ representations of seen data* , predictive accuracy does not reflect the main us
 ## Recent Methods
 + Auto-encoder (VAE - NTMs): need answer 2 key questions:
   + Different from other applications $\to$ How to deal with such data 
-  + 
++ DocNADE - NTMs
++ Gan-NTMs
++ GNN-NTMs
++ Other Framework
+
 

@@ -15,7 +15,7 @@ let metadata = Metadata{
 log::info!("{:?}", metadata);
 ```
 *RuntimeDebug*: already implement display function for normal struct.
-## Struct with Generic type
+## Struct with Generic typedecoration
 Need to implement display function for generic type struct. 
 ```rust
 #[derive(Clone, Encode, Decode, PartialEq, TypeInfo, MaxEncodedLen)]

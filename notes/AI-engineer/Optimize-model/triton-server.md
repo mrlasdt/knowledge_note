@@ -13,8 +13,10 @@
 ## Notes for deploy triton and fastAPI
 
 1. Convert model to tensorrt 
+   1. Should use trtexec (because use code only load 1 file onnx)
+   2. Should remove unnecessary output by wrap module. (nn.Module for pytorch)
+   3. Install tensorrt by tar file. 
 > Tip: Use docker for convert.
-2. 
 
 
 # Reference

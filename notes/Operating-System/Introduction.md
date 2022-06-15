@@ -75,12 +75,6 @@ interrupted computation.
 
 
 ## 1.4 Storage
-
-## 1.5 I/O structure
-
-
-# Computer System Architecture
-## 1.1 Single-processor systems
-
-## 1.2 Multiprocessor Systems.
-
+<div style = "text-align:center">
+<img src="/Media/storage.png">
+</div>
