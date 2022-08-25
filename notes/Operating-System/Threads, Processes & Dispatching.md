@@ -34,3 +34,38 @@
         + For example: in most cooperative multi-threading systems, only one thread runs at a time, so while a thread is running, no other thread can run and affect the system’s state.
       + Disadvantages: A long run-thread may hold resource and another threads do not have resource to use.
     + **Preemptive multi-threading**: threads can be switched at anytime. 
+## Thread Data Structures
++ Thread Data Structures used for saving thread's state $\to$ for switching processors during process.
+
+
+<div style = "text-align:center">
+<img src = "/Media/OS/thread_state.png">
+<figcaption>**Figure 1.4**: Thread Data Structures</figcaption>
+</div>
+
+### Per-Thread State
++ **Thread Control Block (TCB)** is where OS allocate space for current state of each thread's computation. TCB included:
+    1. The state of the computation being performed by the thread. (stack information and saved registers)
+       + **Stack**: Stored information(variables, parameters, function ...) needed by the nested procedures of running thread.
+       + **Copy of processor registers**: 
+         + Stored intermediate value for ongoing computation.
+         + Stored special-purpose registers such as the instruction pointer and stack pointer. Ex: stop and re-run thread on the top of the stack.
+    2. Metadata about the thread that is used to manage the thread.
+### Shared State
++ Per-thread state is allocated for each thread, *some state is shared between threads running in the same process or within the operating system kernel*
+  + Ex: program code is shared by all threads in a process, although each thread may be executing at a different place within that code.
+
+
+## Thread Life Cycle
+
+<div style = "text-align:center">
+<img src = "/Media/OS/thread_life_circle.png">
+<figcaption>**Figure 1.5**: The states of a thread during its lifetime</figcaption>
+</div>
+  
+<div style = "text-align:center">
+<img src = "/Media/OS/thread_location_in_different_state.png">
+<figcaption>**Figure 1.6**: Location of thread's per-thread state for different life cycle stages</figcaption>
+</div>
+ 
+  
