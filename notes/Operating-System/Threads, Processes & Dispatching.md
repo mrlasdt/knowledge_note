@@ -111,7 +111,13 @@
   + **Data parallel programming**: also known as SIMD(single instruction multiple data) programming. 
     + All processor perform the same instructions in parallel on different parts of data set. 
 ## Summary 
-+ **The thread abstraction**: threads are a set of concurrent activities, each of which executes sequentially at unpredictable speed. 
++ [Stanford notes](https://web.stanford.edu/~ouster/cgi-bin/cs140-spring20/lecture.php?topic=thread()https://web.stanford.edu/~ouster/cgi-bin/cs140-spring20/lecture.php?topic=thread()https://web.stanford.edu/~ouster/cgi-bin/cs140-spring20/lecture.php?topic=thread()https://web.stanford.edu/~ouster/cgi-bin/cs140-spring20/lecture.php?topic=thread): Comprehensive notes
++ **The thread abstraction**:
+  + Thread : A sequential execution stream $\to$ Executes a series of instructions in order.
+  + Process: one or more threads, along with their execution state:
+    + Part is shared among all threads in the process.
+    + Part of the process state is private to a thread.
+  + Execution state: everything that can affect, or be affect by a thread: Code, data, registers, call stack, open files, netowrk connections 
 + **A simple thread API**: Thread libraries, whether for use in the operating system kernel or in application code, provide the ability to perform asynchronous procedure call.
 + **Thread implementations**: 
   + Basically, it is implementing the ability to save one thread's state and restore another. 
