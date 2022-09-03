@@ -1,5 +1,4 @@
 # Concurrency
-
 + Thread: set of streams of execution. 
 + Each thread behaves as if it has its own dedicated processor.
 + The operating system provides the illusion that programmers can create as many threads as they need and each thread runs on its own dedicated virtual machine. In reality, a machine only has a finite number of processors, and it is the operating system's job to transparently multiplex threads onto the actual processors.
@@ -53,8 +52,7 @@
 ### Shared State
 + Per-thread state is allocated for each thread, *some state is shared between threads running in the same process or within the operating system kernel*
   + Ex: program code is shared by all threads in a process, although each thread may be executing at a different place within that code.
-
-
++ Shared state is use for communicate, coordinate work, and share information among threads. 
 ## Thread Life Cycle
 
 <div style = "text-align:center">
@@ -117,7 +115,7 @@
   + Process: one or more threads, along with their execution state:
     + Part is shared among all threads in the process.
     + Part of the process state is private to a thread.
-  + Execution state: everything that can affect, or be affect by a thread: Code, data, registers, call stack, open files, netowrk connections 
+  + Execution state: everything that can affect, or be affect by a thread: Code, data, registers, call stack, open files, network connections 
 + **A simple thread API**: Thread libraries, whether for use in the operating system kernel or in application code, provide the ability to perform asynchronous procedure call.
 + **Thread implementations**: 
   + Basically, it is implementing the ability to save one thread's state and restore another. 
