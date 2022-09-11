@@ -110,3 +110,48 @@ noteB = 0;          // remove note B
 $\to$ *solution* : [Symmetric solution without busy-waiting](https://en.wikipedia.org/wiki/Peterson%27s_algorithm)
 
 ## Structuring Shared Objects. 
++ **Shared objects**: are objects that can be accessed safely by multiple threads. 
++ All shared state in a program - including variables allocated on the heap, and static, global variables - should be encapsulated in one or more share objects. 
+
+<div style = "text:align">
+<img src = "/Media/OS/shared-objects-structure.png">
+</div>
+
++ **Shared object layer** : define application logic and hide internal implementation details. Externally, they appear to have the same interface as you would define for a single-threaded program.
++ **Synchronization variable layer**: is a data structure used for coordinating concurrent access to shared state. 
++ **Atomic instruction layer**
+
+## Lock Mutual Exclusion
+
+A **lock** is a synchronization variable that provides mutual exclusion - when one thread holds a lock, no other thread can hold it.  
+$\to$ Use for guarantees that one update or query completes before the next one starts.
+1. **Locks: API and Properties.**
+   + 2 methods: *Lock::acquire()* and *Lock::release()*
+     + A lock can be in one of two states: BUSY and FREE.
+     + A lock is initially in the FREE state.
+     + Lock::acquire() waits until the lock is FREE and then atomically makes the lock BUSY.
+     + Lock::release() makes the lock FREE. If there are pending `acquire` operations, the state change cause one of them to proceed.
+   + **Lock's Properties**:
+     1. **Mutual Exclusion**: At most one thread holds the lock.
+     2. **Progress**: If no thread holds the lock and any thread attempts to acquire the lock, then eventually some thread succeeds in acquiring the lock.
+     3. **Bounded waiting**: If thread T attempts to acquire a lock, then there exists a bound on the number of times other threads can successfully acquire the lock before T does. 
+   
+## Condition Variables: Waiting for a Change
+
+**Condition Variable Definition**: is a synchronization object that lets a thread efficiently wait for a change to shared state that is protected by a lock. A condition variable has 3 methods:
+   + **CV::wait(Lock *lock)**: This call atomically *release the lock and suspends execution of the calling thread*, placing calling thread on the condition variable's waiting list. Later when the calling thread is re-enabled, it *re-acquires the lock* before returning from the `wait` call
+   + **CV::signal()**: This call take one thread off the condition variable's waiting list and marks it as eligible to run. If no threads are on the waiting list, `signal` has no effect.
+   + **CV::broadcast()**: This call takes all threads off the condition variable's waiting list and marks them as eligible to run. If no threads are on the waiting list, `broadcast` has no effect.
+
+## Designing and Implementing Shared Objects 
+
++ In concurrent code, it is not enough for the code to work. It also needs to be simple enough to understand. 
+### Designing And Implementing Shared Objects: High Level Methodology.
++ A shared object has: **public methods**, **private methods**, **state variables**, and **synchronization variables**. 
+  + Synchronization variables includes a lock and one or more condition variables. 
++ Steps for designing multi threaded shared objects:
+  1. Add a lock: Each sahred object needs a lock as a member variable to enforce mutually exclusive access to the object's shared state. 
+  2. Add code to `acquire` and `release` the lock: add `acquire` the lock at start of each public method and release it at the end of each public method. $\to$ the lock is already held when each private method is called, no need to re-acquire.  
+  3. Identify and add condition variables: add condition variable for each situation in which the method must wait. 
+  4. Add loops to wait using the condition variables
+  5. Add `signal` and `broadcast` calls
