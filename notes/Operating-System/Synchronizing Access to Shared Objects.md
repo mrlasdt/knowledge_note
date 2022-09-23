@@ -139,9 +139,9 @@ $\to$ Use for guarantees that one update or query completes before the next one 
 ## Condition Variables: Waiting for a Change
 
 **Condition Variable Definition**: is a synchronization object that lets a thread efficiently wait for a change to shared state that is protected by a lock. A condition variable has 3 methods:
-   + **CV::wait(Lock *lock)**: This call atomically *release the lock and suspends execution of the calling thread*, placing calling thread on the condition variable's waiting list. Later when the calling thread is re-enabled, it *re-acquires the lock* before returning from the `wait` call
-   + **CV::signal()**: This call take one thread off the condition variable's waiting list and marks it as eligible to run. If no threads are on the waiting list, `signal` has no effect.
-   + **CV::broadcast()**: This call takes all threads off the condition variable's waiting list and marks them as eligible to run. If no threads are on the waiting list, `broadcast` has no effect.
+   + **wait(condition, lock)**: release lock, put thread to sleep until `condition` is signaled; when thread wakes up again, re-acquire lock before returning.
+   + **signal(condition, lock)**: if any threads are waiting on `condition`, wake up one of them. caller must hold `lock`, which must be the same as the `lock` used in the `wait` call.
+   + **broadcast(condition, lock)**: same as `signal`, expect wake up all waiting threads.
 
 ## Designing and Implementing Shared Objects 
 
@@ -155,3 +155,16 @@ $\to$ Use for guarantees that one update or query completes before the next one 
   3. Identify and add condition variables: add condition variable for each situation in which the method must wait. 
   4. Add loops to wait using the condition variables
   5. Add `signal` and `broadcast` calls
+### Designing and Implementing Shared Objects: Implementation Best Practices. 
+> For concurrent programming: *debugging does not work* $\to$ write correct code and easy to understand for debugging.  
++ 6 Rules for coding multi-threaded: 
+  1. **Consistent structure**
+  2. **Always synchronize with locks and condition variables**:
+  3. **Always acquire the lock at the beginning of a method and release it right before return**
+  4. **Always hold the lock when operating on a condition variable**.
+  5. **Always wait in a while() loop**.
+  6. **(Almost) ever use `thread_sleep`**
+## Implementing Synchronization Objects
++ Both locks and condition variables have state. 
+  + *Lock states*: FREE or BUSY
+  + *Condition variables state*: is the queue of threads waiting to be signaled. 
