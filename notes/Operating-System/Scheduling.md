@@ -68,3 +68,5 @@
   + Using multiple Round-robin queue with a different priority level and time quantum. 
   + Tasks at a higher priority level preempt lower priority tasks, tasks with the same priority will be scheduled in Round-Robin mechanism. 
   + Tasks are moved between priority levels to favor short tasks over long ones $\to$ tasks uses up its time $\to$ drop its level $\to$ repeat until it completed and leave system.
+
+## 2. Multi-processor Scheduling
