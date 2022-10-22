@@ -23,4 +23,45 @@
 ## 4. Deadlock
 
 + *A deadlock is a cycle of waiting among a set of threads, where each thread waits for some other thread in the cycle to take some action*
++ Deadlock definition:
+  + A collection of threads are all blocked
+  + Each thread is waiting for a resource owned by one of the other threads.
+  + Since all threads are blocked, none can release their resources.
+
+### 4.1 Deadlock Problems
++ Systems usually have multiple locks
++ Threads often need to hold multiple locks at the same time
 + 
+### 4.2 Necessary Conditions for Deadlock
++ There are 4 necessary conditions for deadlock occur:
+  + 1. **Limited access**: Resources cannot be shared. there are a finite number of threads that can simultaneously use a resource. 
+  + 2. **No preemption**: Once given, a resource cannot be taken away.
+  + 3. **Multiple independent requests**: Threads don't ask for resources all at once (hold resources while waiting)
+  + 4. **Circular waiting**: Circularity in the graph of requests and ownership.
+
+<div style = "text-align:center">
+<img src ="/Media/OS/deadlock_illustrate.png">
+</div>
+
+### 4.3 Cause and solution forDeadlock
++ Deadlock can occur over antythig that causes waiting:
+  + Locks
+  + Network messages
+  + Disk drive
+  + Memory space exhausted/
++ Deadlock can occur over discrete resources(e.g locks) or quantities of a more continous resoucrce(pages of memory)
++ In general, don't know in advance which resources a thread will need.
+
++ *Solution*:
+  + 1. Deadlock detection:
+    + Determine when system is deadlocked.
+    + Break the deadlock by terminating one of the threads.
+    + Usually not practical in operating systems, but often used in database system where transactions can be aboarted and retried.
+  + 2. Deadlock prevention: Eliminate one of the necessary conditions for deadlock.
+    + Don't allow exclusive access $\to$ Not reasonable for most applications
+    + Create enough resources so that they never run out $\to$ May work for things like disk space, but locks for synchronization are intentionally limited in number.
+    + Allow preemption $\to$ Works for some resources but not others (e.g Can't preempt a lock)
+    + Require threads to request all resources at the same time; either get them all or wait for them all.
+      + Tricky to implement: must wait for several things without locking any of them.
+      + Inconvenient for thread: hard to predict needs in advance. May require thread to over-allocate just to be safe.
+    + Prevent circularities: all threads request resources in the same order (e.g always lock 1 before 2) $\to$ ordering lock $\to$ Most common approach used in operating system.
