@@ -43,7 +43,7 @@
 <img src ="/Media/OS/deadlock_illustrate.png">
 </div>
 
-### 4.3 Cause and solution forDeadlock
+### 4.3 Cause and solution for Deadlock
 + Deadlock can occur over antythig that causes waiting:
   + Locks
   + Network messages
