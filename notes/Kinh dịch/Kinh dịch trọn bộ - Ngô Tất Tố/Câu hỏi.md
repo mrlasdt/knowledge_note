@@ -1,0 +1,1 @@
++ Đọc kinh dịch quá nhiều từ hán -> khó hiểu -> khó đọc -> có cách nào k?
