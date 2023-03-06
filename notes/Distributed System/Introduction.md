@@ -12,7 +12,7 @@ $\to$ Its divided into 2 parts
 ### 1.1 Cluster computing.
 + Cluster computing is used for *parallel programming* in which a single (computer intensive) *programe is run in parallel on multiple machines*. $\to$ Depend on network between computers.  
 <div style='align:text-center'>
-<img src="Media/distributed_systems/cluster_computing_example.png">
+<img src="../../Media/distributed_systems/cluster_computing_example.png">
 <figcaption> 1.1 Example of a custer computer system </figcaption>
 </div>
 
