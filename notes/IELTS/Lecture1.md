@@ -7,7 +7,7 @@
   
 Ex: 
 <div>
-<img src= "/Media/map_assignment.png">
+<img src= "../../Media/map_assignment.png">
 </div>
 
 $\to$ The two maps illustrate the changes which have taken place in a specific area since 1965 and proposed developments for 2030.

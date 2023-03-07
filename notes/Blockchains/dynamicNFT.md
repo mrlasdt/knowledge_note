@@ -10,8 +10,8 @@ $\to$ not flexible for many use cases in real life. Ex: Up level in game, real e
 + NFT metadata is where *the token’s name is specified, traits are assigned, and file links are placed*. **While the tokenID provides a permanent identifier for verifiable ownership**, the metadata is the essence of the NFT—housing the elements that make it useful.
 ## How it work?
 
-<div align="center">
-<img src="/Media/dnft-how-it-work.png">
+<div text="align:center">
+<img src="../../Media/dnft-how-it-work.png">
 <figcaption> Overview DNFTs mechanism </figcaption>
 </div>
 
@@ -20,18 +20,18 @@ $\to$ not flexible for many use cases in real life. Ex: Up level in game, real e
 + 5: Smart contract update to NFT if conditions is fullfil
 
 ## Use cases
-<div align="center">
-<img src= "/Media/dnft-game.png">
+<div text="align:center">
+<img src= "../../Media/dnft-game.png">
 <figcaption> Gaming: Level up </figcaption>
 </div>
 
-<div align="center">
-<img src= "/Media/dnft-real-estate.png">
+<div text="align:center">
+<img src= "../../Media/dnft-real-estate.png">
 <figcaption> Checking Real estate status </figcaption>
 </div>
 
-<div align="center">
-<img src="/Media/dnft-football.png">
+<div text="align:center">
+<img src="../../Media/dnft-football.png">
 <figcaption> Updating private data for football players </figcaption>
 </div>
 
